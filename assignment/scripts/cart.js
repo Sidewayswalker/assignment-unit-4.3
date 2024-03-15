@@ -55,6 +55,7 @@ console.log('Remove everything from basket', empty());
 // console.log('Adding apples (expect true)', addItem('apples'));
 // console.log(`Basket is now ${basket}`);
 console.log(addItem('Chocolate'));
+console.log(addItem('Gum'));
 console.log('Everything in the basket', basket);
 
 
@@ -90,18 +91,29 @@ console.log('Is the basket full? ', isFull()); //false
 //DONE SEE FUNCTION ABOVE
 
 
-
-
-
 // Using Array built-in functions! (Topic Overview Statement)
 // Create a function called removeItem. It should:
 //      Take an input parameter for a string item
 //      Use Array.indexOf to find the index of the first matching item in the basket.
 //      Use Array.splice to remove the first matching item from the basket.
 //      Return the item removed or null if the item was not found
+console.log('What is in the Basket', basket);
 
 
+function removeItem(item){
+    let x = basket.indexOf(item);
+    for (let i=0; i < basket.length; i++){
+        if(basket.includes(item)){
+            basket.splice(x, 1);
+            return item
+        } else {
+            return null
+        }
+    }
+}
+console.log(`Remove`,removeItem('Gum'));
 
+console.log('What is left in the Basket', basket);
 
 
 
